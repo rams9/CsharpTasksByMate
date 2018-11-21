@@ -25,7 +25,7 @@ namespace smaplepro
                 {
                     DateTime requestDate = DateTime.UtcNow.AddDays(days);
                     var reqDay = requestDate.DayOfWeek;
-
+                    
                     naadate obj = new naadate(reqDay.ToString());
 
                     errorMsg.Text = obj.UserMessage;

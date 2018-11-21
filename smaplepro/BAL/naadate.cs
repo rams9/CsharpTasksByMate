@@ -8,22 +8,14 @@ namespace smaplepro.BAL
     {
         public string UserMessage { get; set; }
 
-        public enum WeekDaysList
-        {
-            Monday = 1,
-            Tuesday = 2,
-            Wednesday = 3,
-            Thursday = 4,
-            Friday = 5,
-            Saturday = 6,
-            Sunday = 7
-
-        }
+      
 
 
         public naadate(string day)
         {
-            Enum.TryParse(day, out WeekDaysList days);
+            WeekDaysList days = (WeekDaysList)Enum.Parse(typeof(WeekDaysList), day);
+           
+            
             switch (days)
             {
                 case WeekDaysList.Monday:
@@ -34,21 +26,21 @@ namespace smaplepro.BAL
                     UserMessage = "sai Like Tuesday";
                     break;
                 case WeekDaysList.Wednesday:
-                    UserMessage = "sai Like Wednesday";
+                    UserMessage = "Surya Like Wednesday";
                     break;
                 case WeekDaysList.Thursday:
-                    UserMessage = "sai Like Thursday";
+                    UserMessage = "Ravi Like Thursday";
                     break;
 
                 case WeekDaysList.Friday:
-                    UserMessage = "sai Like Friday";
+                    UserMessage = "Khadar Like Friday";
                     break;
 
                 case WeekDaysList.Saturday:
-                    UserMessage = "sai Like Satuday";
+                    UserMessage = "Vijay Like Satuday";
                     break;
                 case WeekDaysList.Sunday:
-                    UserMessage = "sai Like Sunday";
+                    UserMessage = "Ashesh Like Sunday";
                     break;
 
                 default:
@@ -58,9 +50,21 @@ namespace smaplepro.BAL
             }
 
         }
-
+      
 
 
     }
+     enum WeekDaysList
+    {
+        Monday = 1,
+        Tuesday = 2,
+        Wednesday = 3,
+        Thursday = 4,
+        Friday = 5,
+        Saturday = 6,
+        Sunday = 7
+
+    }
+
 
 }

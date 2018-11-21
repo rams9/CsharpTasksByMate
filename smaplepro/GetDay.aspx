@@ -11,6 +11,9 @@
         <div>
             <asp:Label runat="server"> Enter Days </asp:Label>
                 <asp:TextBox ID="txtDays" runat="server"></asp:TextBox>
+            <asp:RangeValidator runat="server" ID="rngDays" ControlToValidate="txtDays" MaximumValue="14" MinimumValue="1" ErrorMessage="Please Enter should be 1 to 14" Type="Integer" ></asp:RangeValidator> 
+            <asp:CompareValidator runat="server" ID="cmpDays" Operator="DataTypeCheck" Type="Integer" ControlToValidate="txtDays" ErrorMessage="only accept numbers"></asp:CompareValidator>
+
             <asp:Button ID="btnGetDay" OnClick="btnGetDay_Click" Text="Get Future Day Name" runat="server" />
             <asp:Button ID="btnPastDay" OnClick="btnPastDay_Click" Text="Get Past Day Name"  runat="server" />
             <asp:Label ID="errorMsg" runat="server"></asp:Label>

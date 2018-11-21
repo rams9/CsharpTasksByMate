@@ -17,14 +17,31 @@ namespace smaplepro
 
         protected void btnGet_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var n1 = Convert.ToInt32(txtInputOne.Text);
+                var n2 = Convert.ToInt32(txtInputTwo.Text);
 
-            var n1 = Convert.ToInt32(txtInputOne.Text);
-            var n2 = Convert.ToInt32(txtInputTwo.Text);
-            twoway two = new twoway();
-           
-           var res= ShowResult(n1, n2);
-            lblInteger.Text = res.SumValue.ToString();
-            lblstring.Text = res.MultilplicationIs;
+                if (n1 > 0 && n2 > 0)
+                {
+                    // twoway two = new twoway();
+
+                    //var res= ShowResult(n1, n2);
+                    // lblInteger.Text = res.SumValue.ToString();
+                    // lblstring.Text = res.MultilplicationIs;
+                    var resTup = MultiReqturn(n1, n2);
+                    lblInteger.Text = resTup.Item1.ToString();
+                    lblstring.Text = resTup.Item2.ToString();
+                }
+                else
+                {
+                    lblstring.Text = "Please enter numbers greater then Zero";
+                }
+            }
+            catch(Exception Ex)
+            {
+                Console.WriteLine(Ex.Message);
+            }
 
         }
         public twoway ShowResult(int a,int b)
@@ -39,6 +56,14 @@ namespace smaplepro
 
         }
 
+
+        public Tuple<int, string> MultiReqturn(int a, int b)
+        {
+            int sum = a + b;
+            string mul = "Multiplicatio is " + (a * b);
+
+            return Tuple.Create(sum, mul);
+        }
 
     }
 

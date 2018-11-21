@@ -31,6 +31,24 @@ namespace smaplepro {
         protected global::System.Web.UI.WebControls.TextBox txtDays;
         
         /// <summary>
+        /// rngDays control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rngDays;
+        
+        /// <summary>
+        /// cmpDays control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cmpDays;
+        
+        /// <summary>
         /// btnGetDay control.
         /// </summary>
         /// <remarks>
